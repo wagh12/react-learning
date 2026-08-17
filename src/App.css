@@ -1,38 +1,290 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* ===============================
+       FONT FAMILY
+    ================================== */
+  --primary-font: "Montserrat", sans-serif !important;
+
+  /* ===============================
+       FONT SIZES
+    ================================== */
+
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-base: 16px;
+  --fs-md: 18px;
+  --fs-lg: 20px;
+  --fs-xl: 24px;
+  --fs-2xl: 32px;
+  --fs-3xl: 40px;
+  --fs-4xl: 48px;
+
+  /* ===============================
+       HEADING FONT SIZES
+    ================================== */
+
+  --h1-size: 30px;
+  --h2-size: 32px;
+  --h3-size: 28px;
+  --h4-size: 24px;
+  --h5-size: 20px;
+  --h6-size: 16px;
+
+  /* ===============================
+       FONT WEIGHTS
+    ================================== */
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* ===============================
+       LINE HEIGHTS
+    ================================== */
+
+  --lh-normal: 1.5;
+  --lh-heading: 1.2;
+
+  /* ===============================
+       COLORS
+    ================================== */
+
+  --primary: #f4364c;
+  --secondary: #000000;
+  --heading-color: #ffffff;
+  --select-background: #e1e1e1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ===============================
+   GLOBAL RESET
+================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  font-family: var(--primary-font);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--text-color);
+  background: var(--heading-color);
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+/* ===============================
+   HEADINGS
+================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font);
+  color: var(--white);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: var(--h1-size) !important;
+}
+
+h2 {
+  font-size: var(--h2-size) !important;
+}
+
+h3 {
+  font-size: var(--h3-size) !important;
+}
+
+h4 {
+  font-size: var(--h4-size) !important;
+}
+
+h5 {
+  font-size: var(--h5-size) !important;
+}
+
+h6 {
+  font-size: var(--h6-size) !important;
+}
+
+/* ===============================
+   PARAGRAPH
+================================== */
+
+p {
+  font-size: var(--fs-base);
+  color: var(--muted-color);
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   LINKS
+================================== */
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease;
+}
+
+/* ===============================
+   INPUT FIELDS
+================================== */
+
+input,
+textarea,
+select {
+  font-family: var(--primary-font);
+  font-size: var(--fs-sm);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  border-color: #dee2e6 !important;
+  box-shadow: none !important;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-close:focus {
+  box-shadow: none !important;
+}
+/* ===============================
+   CRM CARD TITLE
+================================== */
+
+.card-title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+}
+
+/* ===============================
+   CRM SMALL TEXT
+================================== */
+
+.small-text {
+  font-size: var(--fs-base);
+  color: var(--primary);
+}
+
+.text-color {
+  color: var(--secondary) !important;
+}
+
+/* ===============================
+   RESPONSIVE TYPOGRAPHY
+================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --h1-size: 30px;
+    --h2-size: 25px;
+    --h3-size: 20px;
+    --h4-size: 15px;
+    --h5-size: 15px;
+    --h6-size: 12px;
   }
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* button */
+.common_btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  padding: 0.875rem 1.75rem;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--primary);
+  color: #fff;
+  transition: all 0.35s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.common_btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: left 0.7s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.common_btn:hover {
+  color: #fff;
+  background: var(--primary);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.common_btn:hover::before {
+  left: 140%;
+}
+
+.common_btn:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.common_btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25);
+}
+.common_btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.common_btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
 }
